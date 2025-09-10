@@ -286,15 +286,28 @@ nav.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(44, 107, 172, 0.8), rgba(44, 107, 172, 0.9)), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(44, 107, 172, 0.8), rgba(102, 160, 218, 0.3)), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
     color: white;
     text-align: center;
+    /* Animation for slow background movement */
+    animation: slowPan 5s ease-in-out infinite alternate;
     /* Removed margin-top to prevent overlap with fixed header */
+}
+
+/* Slow panning animation for hero background */
+@keyframes slowPan {
+    0% {
+        background-position: center center;
+    }
+    100% {
+        background-position: 20% 30%;
+    }
 }
 
 .hero-content {
